@@ -1,4 +1,4 @@
-/* Premium Grey Theme CSS */
+
 :root {
     --primary-color: #4e4e4e;
     --secondary-color: #3a3a3a;
@@ -18,8 +18,6 @@
     --border-radius: 8px;
     --border-radius-lg: 12px;
 }
-
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -169,7 +167,6 @@ section {
     margin: 40px 0;
 }
 
-/* Navigation - Premium Sticky Header */
 .navbar {
     position: fixed;
     top: 0;
@@ -283,7 +280,6 @@ section {
     transform: translateY(50%) rotate(-45deg);
 }
 
-/* Hero Section - Premium Design */
 .hero {
     padding-top: 150px;
     background: linear-gradient(135deg, var(--light-color) 0%, var(--white) 100%);
@@ -445,7 +441,6 @@ section {
     box-shadow: var(--shadow-sm);
 }
 
-/* About Section - Premium Card Design */
 .about {
     background-color: var(--light-color);
 }
@@ -581,7 +576,6 @@ section {
     margin-top: 40px;
 }
 
-/* Services Section - Premium Cards */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -687,8 +681,6 @@ section {
 .read-more:hover i {
     transform: translateX(5px);
 }
-
-/* Portfolio Section - Premium Gallery */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -787,7 +779,6 @@ section {
     transform: rotate(45deg);
 }
 
-/* Contact Section - Premium Form */
 .contact-content {
     display: flex;
     gap: 60px;
@@ -904,28 +895,23 @@ section {
     min-height: 150px;
 }
 
-
-
-
-
-/* Contact Form Styling */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Uniform gap between all form elements */
+    gap: 20px; 
     width: 100%;
 }
 
 .form-row {
     display: flex;
-    gap: 20px; /* Spacing between input pairs */
+    gap: 20px;
     width: 100%;
 }
 
 .form-group {
     flex: 1;
     position: relative;
-    margin-bottom: 0; /* Remove default margins */
+    margin-bottom: 0; 
 }
 
 .form-group input,
@@ -940,7 +926,6 @@ section {
     background-color: var(--light-color);
 }
 
-/* Focus states */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -949,20 +934,17 @@ section {
     background-color: var(--white);
 }
 
-/* Textarea specific styling */
 .form-group textarea {
     min-height: 150px;
     resize: vertical;
 }
 
-/* Submit button styling */
 .contact-form .btn-primary {
     width: 100%;
     padding: 16px;
     margin-top: 10px;
 }
 
-/* Floating labels effect */
 .form-group label {
     position: absolute;
     top: 16px;
@@ -985,19 +967,17 @@ section {
     background-color: var(--white);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .form-row {
         flex-direction: column;
-        gap: 20px; /* Maintain vertical spacing on mobile */
+        gap: 20px; 
     }
     
     .contact-form {
-        gap: 20px; /* Consistent gap on mobile */
+        gap: 20px;
     }
 }
 
-/* Footer - Premium Design */
 .footer {
     background-color: var(--dark-color);
     padding: 80px 0 0;
@@ -1159,7 +1139,6 @@ section {
     color: var(--white);
 }
 
-/* Back to Top - Premium Button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1190,7 +1169,6 @@ section {
     transform: translateY(-5px) rotate(5deg);
 }
 
-/* Responsive Styles */
 @media (max-width: 1200px) {
     .hero h1 {
         font-size: 46px;
@@ -1321,7 +1299,6 @@ section {
     }
 }
 
-/* Animation Classes */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }

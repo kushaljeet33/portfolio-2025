@@ -1,6 +1,6 @@
-// Wait for the DOM to be fully loaded
+
 document.addEventListener('DOMContentLoaded', function() {
-    // ========== Global Variables ==========
+   
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.querySelector('.hamburger');
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     const currentYear = new Date().getFullYear();
     
-    // ========== Initialize Functions ==========
     initTypingEffect();
     initScrollSpy();
     initSkillBars();
@@ -21,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormSubmission();
     initIntersectionObserver();
     
-    // ========== Function Definitions ==========
-    
-    // Typing effect for the hero section
     function initTypingEffect() {
         const typingText = document.querySelector('.typing-text');
         const professions = ['Frontend Developer', 'UI Designer', 'Python Programmer', 'Problem Solver'];
@@ -64,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(type, 1000);
     }
     
-    // Highlight active nav link based on scroll position
     function initScrollSpy() {
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-links a');
@@ -89,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // Animate skill bars when they come into view
+
     function initSkillBars() {
         const skillBars = document.querySelectorAll('.skill-progress');
         
@@ -100,13 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 bar.style.width = width;
             });
         }
-        
-        // Initially set width to 0
+    
         skillBars.forEach(bar => {
             bar.style.width = '0';
         });
         
-        // Create observer to trigger animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -121,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Portfolio item hover effects
     function initPortfolioHover() {
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         
@@ -130,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.querySelector('.portfolio-overlay').style.opacity = '1';
                 this.querySelector('img').style.transform = 'scale(1.1)';
                 
-                // Animate overlay children
                 const overlayChildren = this.querySelectorAll('.portfolio-overlay > *');
                 overlayChildren.forEach((child, index) => {
                     child.style.transform = 'translateY(0)';
@@ -142,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.querySelector('.portfolio-overlay').style.opacity = '0';
                 this.querySelector('img').style.transform = 'scale(1)';
                 
-                // Reset overlay children
+
                 const overlayChildren = this.querySelectorAll('.portfolio-overlay > *');
                 overlayChildren.forEach(child => {
                     child.style.transform = 'translateY(20px)';
@@ -152,12 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Set current year in footer
     function initCurrentYear() {
         document.getElementById('year').textContent = currentYear;
     }
     
-    // Smooth scrolling for anchor links
     function initSmoothScrolling() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -172,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
+         
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
                         hamburger.classList.remove('active');
@@ -182,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Navbar scroll effect
     function initNavbarScroll() {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 100) {
@@ -193,14 +180,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile menu toggle
+
     function initMobileMenu() {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
         
-        // Close menu when clicking on a link
+      
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
                 if (navLinks.classList.contains('active')) {
@@ -211,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Back to top button
+
     function initBackToTop() {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 500) {
@@ -224,35 +211,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form submission handling
     function initFormSubmission() {
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Get form values
+            
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const subject = document.getElementById('subject').value;
                 const message = document.getElementById('message').value;
                 
-                // Simple validation
+      
                 if (!name || !email || !message) {
                     alert('Please fill in all required fields.');
                     return;
                 }
                 
-                // Here you would typically send the form data to a server
-                // For demo purposes, we'll just show a success message
+                
                 alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
                 
-                // Reset form
+       
                 contactForm.reset();
             });
         }
     }
     
-    // Intersection Observer for general animations
+
     function initIntersectionObserver() {
         const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .section-header, .hero-content > *:not(.greeting)');
         
@@ -269,8 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(element);
         });
     }
-    
-    // Preloader (optional - add to your HTML if needed)
+
     function initPreloader() {
         const preloader = document.querySelector('.preloader');
         if (preloader) {
